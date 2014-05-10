@@ -18,6 +18,6 @@ Route::post( 'reset-password', 'UserController@doResetPassword' );
 // Actions reserved for logged-in users
 Route::group( [ 'before' => 'auth' ], function () {
 
-  Route::get( 'dashboard', 'UserController@dashboard' );
+  Route::resource( 'campaign', 'CampaignController' );
 
 });

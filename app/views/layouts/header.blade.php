@@ -5,6 +5,7 @@
     <ul>
       @if ( Auth::check() )
 
+        <li>{{ link_to_action( 'CampaignController@index', trans( 'campaign.action_index' ) ) }}</li>
         <li>{{ link_to_action( 'UserController@logout', trans( 'user.action_logout' ) ) }}</li>
 
       @else
