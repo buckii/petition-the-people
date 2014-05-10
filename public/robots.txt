@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /logout
+Disallow: /reset-password
