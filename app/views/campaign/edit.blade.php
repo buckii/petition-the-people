@@ -1,6 +1,6 @@
 @extends( 'layouts.base' )
 
-@section( 'title', trans( 'campaign.index_title' ) )
+@section( 'title', trans( 'campaign.edit_title' ) )
 
 @section( 'body' )
 

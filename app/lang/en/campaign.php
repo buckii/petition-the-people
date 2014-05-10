@@ -32,4 +32,8 @@ return array(
   'create_heading' => 'New campaign',
   'slug_field_description' => 'Once set, this unique URL cannot be changed!',
 
+  // Edit a campaign
+  'edit_title' => 'Edit Campaign',
+  'edit_heading' => 'Edit campaign',
+
 );
