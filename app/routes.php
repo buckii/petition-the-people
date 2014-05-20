@@ -15,6 +15,8 @@ Route::get( 'reset-password', function () {
 });
 Route::post( 'reset-password', 'UserController@doResetPassword' );
 
+Route::get( 'petition/search', 'PetitionController@search' );
+
 // Actions reserved for logged-in users
 Route::group( [ 'before' => 'auth' ], function () {
 

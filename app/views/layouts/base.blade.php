@@ -18,5 +18,13 @@
   </div><!-- #content -->
 
   @include( 'layouts.footer' )
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script>
+    /* <![CDATA[ */
+    var app = {{ WTPHelper::getScriptLocalizationObject() }}
+    /* ]]> */
+  </script>
+  <script src="{{{ asset( 'js/application.js' ) }}}"></script>
 </body>
 </html>

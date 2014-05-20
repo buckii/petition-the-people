@@ -26,6 +26,16 @@ class CampaignController extends BaseController {
     $campaign->save();
 
     if ( $campaign->id ) {
+
+      // Store petition IDs
+      $petition_ids = array();
+      if ( is_array( Input::get( 'petitions' ) ) ) {
+        foreach ( array_unique( Input::get( 'petitions' ) ) as $petition ) {
+          $petition_ids[] = PetitionController::createOrUpdate( $petition );
+        }
+        $campaign->petitions()->sync( $petition_ids );
+      }
+
       return Redirect::action( 'CampaignController@index' )->with( 'success', trans( 'campaign.msg_create_success', [ 'name' => $campaign->name ] ) );
 
     } else {
@@ -63,7 +73,18 @@ class CampaignController extends BaseController {
     $campaign->is_published = Input::get( 'is_published' );
 
     if ( $campaign->save() ) {
+
+      // Store petition IDs
+      $petition_ids = array();
+      if ( is_array( Input::get( 'petitions' ) ) ) {
+        foreach ( array_unique( Input::get( 'petitions' ) ) as $petition ) {
+          $petition_ids[] = PetitionController::createOrUpdate( $petition );
+        }
+        $campaign->petitions()->sync( $petition_ids );
+      }
+
       return Redirect::action( 'CampaignController@index' )->with( 'success', trans( 'campaign.msg_edit_success', [ 'name' => $campaign->name ] ) );
+
     } else {
       return Redirect::back()->withInput()->withErrors( trans( 'campaign.msg_edit_error' ) );
     }

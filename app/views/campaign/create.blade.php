@@ -24,6 +24,9 @@
         <p class="instructions">{{ trans( 'campaign.slug_field_description' ) }}</p>
       </li>
     </ul>
+
+    @include( 'petition.search-form' )
+
     <p class="form-submit">
       {{ Form::submit( trans( 'campaign.action_create_submit' ) ) }}
     </p>

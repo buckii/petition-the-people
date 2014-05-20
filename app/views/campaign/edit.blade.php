@@ -22,6 +22,9 @@
         <label for="is_published">{{ Form::checkbox( 'is_published', true, null, [ 'id' => 'is_published' ] ) }} {{ trans( 'campaign.field_is_published' ) }}</label>
       </li>
     </ul>
+
+    @include( 'petition.search-form' )
+
     <p class="form-submit">
       {{ Form::submit( trans( 'campaign.action_edit_submit' ) ) }}
     </p>

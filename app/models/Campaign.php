@@ -28,6 +28,10 @@ class Campaign extends Eloquent {
     return (bool) ( $this->user_id == $user_id );
   }
 
+  public function petitions() {
+    return $this->belongsToMany( 'Petition' );
+  }
+
   public function user() {
     return $this->belongsTo( 'User' );
   }
