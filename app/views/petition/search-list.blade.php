@@ -4,7 +4,7 @@
     @foreach( $petitions as $petition )
 
       <li>
-        <a href="{{{ $petition->url }}}" class="title" data-petition-id="{{{ $petition->id }}}">{{ $petition->title }}</a>
+        <a href="{{{ $petition->url }}}" class="title" title="{{{ WTPHelper::cleanPetitionBody( $petition->body ) }}}" data-petition-id="{{{ $petition->id }}}">{{ $petition->title }}</a>
       </li>
 
     @endforeach
