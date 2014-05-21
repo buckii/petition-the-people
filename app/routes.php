@@ -1,6 +1,9 @@
 <?php
 
 Route::get( '/', 'FrontController@index' );
+Route::get( 'about', array( 'as' => 'about', function () {
+  return View::make( 'front.about' );
+}));
 
 Route::get( 'signup', 'UserController@create' );
 Route::post( 'signup', 'UserController@store' );

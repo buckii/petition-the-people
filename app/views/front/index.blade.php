@@ -7,6 +7,7 @@
 
 @section( 'body' )
 
-  <h1>foo</h1>
+  <h1>{{ trans( 'front.index.headline' ) }}</h1>
+  {{ trans( 'front.index.content' ) }}
 
 @stop

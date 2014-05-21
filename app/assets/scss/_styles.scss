@@ -30,3 +30,14 @@ input[type="submit"] {
 .form-list {
   @extend .no-bullet;
 }
+
+footer {
+  @extend .row;
+}
+
+#footer-nav {
+  @extend .columns;
+  ul {
+    @extend .inline-list;
+  }
+}
