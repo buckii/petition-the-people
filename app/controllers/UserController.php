@@ -56,7 +56,7 @@ class UserController extends BaseController {
     );
 
     if ( Confide::logAttempt( $input, Config::get('confide::signup_confirm' ) ) ) {
-      return Redirect::intended( '/' );
+      return Redirect::intended( '/campaign' );
 
     } else {
       $user = new User;
