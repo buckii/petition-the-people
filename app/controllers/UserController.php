@@ -29,7 +29,7 @@ class UserController extends BaseController {
     if ( $user->id ) {
 
       if ( Auth::attempt( [ 'email' => $user->email, 'password' => $password ], true ) ) {
-        return Redirect::action( 'UserController@dashboard' )->with( 'success', trans( 'user.msg_create_success' ) );
+        return Redirect::action( 'CampaignController@index' )->with( 'success', trans( 'user.msg_create_success' ) );
       } else {
         return Redirect::action( 'UserController@login' )->with( 'error', trans( 'user.msg_unable_to_auto_login' ) );
       }
