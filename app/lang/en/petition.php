@@ -10,4 +10,7 @@ return array(
   'heading_current_petitions' => 'Petitions in this campaign',
   'no_search_results' => 'No open petitions matched your search query',
 
+  // Show
+  'current_status' => ':signatures signatures, :needed needed by :deadline',
+
 );

@@ -15,6 +15,7 @@ class CampaignController extends BaseController {
       } elseif ( Auth::user()->id === $campaign->user->id ) {
         $vars = array(
           'campaign' => $campaign,
+          'petitions' => $campaign->petitions()->open()->get(),
           'message' => trans( 'campaign.msg_show_not_published' )
         );
 
@@ -28,7 +29,11 @@ class CampaignController extends BaseController {
   public function showPublic( $user, $slug ) {
     $campaign = Campaign::where( 'slug', '=', $slug )->firstOrFail();
     if ( $campaign && $campaign->is_published && $campaign->user->username == $user ) {
-      return View::make( 'campaign.show' )->with( 'campaign', $campaign );
+      $vars = array(
+        'campaign' => $campaign,
+        'petitions' => $campaign->petitions()->open()->get()
+      );
+      return View::make( 'campaign.show' )->with( $vars );
     }
 
     return App::abort( 404 );

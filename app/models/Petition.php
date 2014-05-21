@@ -26,4 +26,8 @@ class Petition extends Eloquent {
     return array( 'created_at', 'updated_at', 'deadline' );
   }
 
+  public function scopeOpen( $query ) {
+    return $query->where( 'status', '=', 'open' );
+  }
+
 }

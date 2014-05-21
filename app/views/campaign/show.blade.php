@@ -1,6 +1,6 @@
 @extends( 'layouts.base' )
 
-@section( 'title', $campaign->title )
+@section( 'title', $campaign->name )
 
 @section( 'body' )
 
@@ -8,17 +8,18 @@
 
   @if ( $campaign->content )
 
-    {{{ $campaign->content }}}
+    {{ WTPHelper::autop( $campaign->content ) }}
 
   @endif
 
   <dl class="accordion" data-accordion>
-    @foreach ( $campaign->petitions as $petition )
+    @foreach ( $petitions as $petition )
 
       <dd>
         <a href="#petition-{{{ $petition->wtp_id }}}">{{{ $petition->title }}}</a>
         <div id="petition-{{{ $petition->wtp_id }}}" class="content">
-          {{{ $petition->body }}}
+          {{ WTPHelper::autop( $petition->body ) }}
+          <p class="petition-status">{{{ trans( 'petition.current_status', [ 'signatures' => $petition->signature_count, 'needed' => $petition->signatures_needed, 'deadline' => $petition->deadline->format( trans( 'global.date_format' ) ) ] ) }}}</p>
         </div>
       </dd>
 
