@@ -3,5 +3,9 @@
 @endif
 
 @if ( Session::has( 'message' ) )
-  <div class="flash radius">{{ Session::get( 'message' ) }}</div>
+  <div class="flash">{{ Session::get( 'message' ) }}</div>
+@endif
+
+@if ( isset( $message ) && $message )
+  <div class="flash">{{ $message }}</div>
 @endif

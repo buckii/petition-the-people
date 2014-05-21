@@ -8,9 +8,18 @@ class CampaignController extends BaseController {
   }
 
   public function show( $id ) {
-    $campaign = Campaign::find( $id );
-    if ( $campaign && Auth::user()->id === $campaign->user->id ) {
-      return View::make( 'campaign.show' )->with( 'campaign', $campaign );
+    if ( $campaign = Campaign::find( $id ) ) {
+      if ( $campaign->is_published ) {
+        return Redirect::action( 'CampaignController@showPublic', [ 'user' => $campaign->user->username, 'slug' => $campaign->slug ] );
+
+      } elseif ( Auth::user()->id === $campaign->user->id ) {
+        $vars = array(
+          'campaign' => $campaign,
+          'message' => trans( 'campaign.msg_show_not_published' )
+        );
+
+        return View::make( 'campaign.show' )->with( $vars );
+      }
     }
 
     return App::abort( 404 );
@@ -21,6 +30,7 @@ class CampaignController extends BaseController {
     if ( $campaign && $campaign->is_published && $campaign->user->username == $user ) {
       return View::make( 'campaign.show' )->with( 'campaign', $campaign );
     }
+
     return App::abort( 404 );
   }
 

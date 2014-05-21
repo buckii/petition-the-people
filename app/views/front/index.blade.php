@@ -8,6 +8,6 @@
 @section( 'body' )
 
   <h1>{{ trans( 'front.index.headline' ) }}</h1>
-  {{ trans( 'front.index.content', [ 'signup_link' => action( 'UserController@create' ) ] ) }}
+  {{ trans( 'front.index.content', [ 'create_link' => action( 'UserController@create' ) ] ) }}
 
 @stop

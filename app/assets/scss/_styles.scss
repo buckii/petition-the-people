@@ -41,3 +41,16 @@ footer {
     @extend .inline-list;
   }
 }
+
+.campaign-list {
+  @extend .no-bullet;
+  > li {
+    padding: .5em 0;
+    border-bottom: 1px solid $hr-border-color;
+  }
+  .row-actions {
+    @extend .inline-list;
+    float: right;
+    margin: 0;
+  }
+}
