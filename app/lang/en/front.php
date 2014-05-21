@@ -10,6 +10,14 @@ return array(
       <p>Getting started is a snap. Simply <a href=":signup_link">create a free account</a> for yourself or your organization, then create a new campaign. You can add things like a title, description, and (of course) petitions. Once you\'re ready, publish the campaign and share its URL across social media, your mailing list, etc. to spread the word! Petition The People is also built from the ground up with mobile and tablets in mind, so you can load it up and hit the streets!</p>',
   ),
 
+  'api_key_required' => array(
+    'page_title' => 'API Key Required',
+
+    'headline' => 'An API key is required!',
+    'content' => '<p>Before you can start collecting petitions, you need to <a href="#" rel="external">acquire an API key from We The People</a>.</p>
+    <p>Once you have a key, simply add it to <code>app/config/:environment/wethepeople.php</code>.</p>',
+  ),
+
   'about' => array(
     'page_title' => 'About Petition the People',
 

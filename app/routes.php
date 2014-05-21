@@ -2,7 +2,7 @@
 
 Route::get( '/', 'FrontController@index' );
 Route::get( 'about', array( 'as' => 'about', function () {
-  return View::make( 'front.about' );
+  return View::make( 'front.default' )->with('page', 'about');
 }));
 
 Route::get( 'signup', 'UserController@create' );

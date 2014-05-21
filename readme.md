@@ -1,5 +1,43 @@
 # Petition the People
 
+## Installation
+
+To get started, clone this repository then run `php composer update` to install application dependencies.
+
+### Setting the application environment
+
+In order to avoid hard-coded environment names, bootstrap/start.php has been configured to look in two places for the application environment:
+
+1. A server variable, `APP_ENVIRONMENT` (you can set this in Apache by adding the following to your VirtualHost):
+    ```
+    SetEnv APP_ENVIRONMENT development
+    ```
+
+2. Create a new file at bootstrap/environment.php with the following contents (replacing %environment% with your desired environment name):
+    ```
+    <?php return '%environment'; ?>
+    ```
+
+### Environment-specific configuration
+
+Default settings are within the main app config files, but you'll need to take care of a few yourself (namely the database and mail settings). You can [read up on environment-specific overrides to config files](http://laravel.com/docs/configuration) on the Laravel site.
+
+### Database migrations
+
+Once you've created a database for the application and provided Laravel with the credentials, you'll need to run the following (updating the `--env` flag as appropriate) to get the database structure in place:
+
+```
+php artisan migrate --env=development
+```
+
+### We The People API key
+
+In order to collect signatures, it's necessary to [acquire an API key from We The People](#). This key will go into your environment-specific app/config/{environment}/wethepeople.php file for the `api_key` key.
+
+## Contributing
+
+We'd be happy to review any pull requests made against the application. This early version of the app is more focused on collecting signatures than spitting out data, but insights on the people signing the petitions would be rad. Translations into other languages (especially Spanish) would also be greatly appreciated, as the app is translation-ready. Read [the Laravel documentation on localization](http://laravel.com/docs/localization) to get started.
+
 ## License
 
 Petition the People petition campaign tool
