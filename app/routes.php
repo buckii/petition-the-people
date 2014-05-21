@@ -17,6 +17,8 @@ Route::post( 'reset-password', 'UserController@doResetPassword' );
 
 Route::get( 'petition/search', 'PetitionController@search' );
 
+Route::get( '{username}/{slug}', 'CampaignController@showPublic' );
+
 // Actions reserved for logged-in users
 Route::group( [ 'before' => 'auth' ], function () {
 

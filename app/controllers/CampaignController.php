@@ -7,6 +7,23 @@ class CampaignController extends BaseController {
     return View::make( 'campaign.index' )->with( 'campaigns', $campaigns );
   }
 
+  public function show( $id ) {
+    $campaign = Campaign::find( $id );
+    if ( $campaign && Auth::user()->id === $campaign->user->id ) {
+      return View::make( 'campaign.show' )->with( 'campaign', $campaign );
+    }
+
+    return App::abort( 404 );
+  }
+
+  public function showPublic( $user, $slug ) {
+    $campaign = Campaign::where( 'slug', '=', $slug )->firstOrFail();
+    if ( $campaign && $campaign->is_published && $campaign->user->username == $user ) {
+      return View::make( 'campaign.show' )->with( 'campaign', $campaign );
+    }
+    return App::abort( 404 );
+  }
+
   public function create() {
     return View::make( 'campaign.create' );
   }

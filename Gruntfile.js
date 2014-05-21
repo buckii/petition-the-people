@@ -16,6 +16,7 @@ module.exports = function(grunt) {
         src: [
           'bower_components/jquery/dist/jquery.min.js',
           'bower_components/foundation/js/foundation/foundation.js',
+          'bower_components/foundation/js/foundation/foundation.accordion.js',
           'bower_components/foundation/js/foundation/foundation.tooltip.js',
           'app/assets/js/application.js'
         ],
