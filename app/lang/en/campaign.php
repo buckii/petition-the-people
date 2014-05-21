@@ -42,4 +42,7 @@ return array(
   'edit_title' => 'Edit Campaign',
   'edit_heading' => 'Edit campaign',
 
+  // Show
+  'sign_petitions_heading' => 'Sign selected petitions',
+
 );

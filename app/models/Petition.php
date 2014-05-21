@@ -30,4 +30,8 @@ class Petition extends Eloquent {
     return $query->where( 'status', '=', 'open' );
   }
 
+  public function signatures() {
+    return $this->belongsToMany( 'Signature', 'petition_signature' );
+  }
+
 }

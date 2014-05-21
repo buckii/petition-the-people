@@ -26,5 +26,6 @@ Route::get( 'campaigns/{username}/{slug}', 'CampaignController@showPublic' );
 Route::group( [ 'before' => 'auth' ], function () {
 
   Route::resource( 'campaign', 'CampaignController' );
+  Route::resource( 'signature', 'SignatureController' );
 
 });

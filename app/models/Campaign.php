@@ -40,4 +40,8 @@ class Campaign extends Eloquent {
     return $query->where( 'user_id', '=', Auth::user()->id );
   }
 
+  public function signatures() {
+    return $this->belongsToMany( 'Signature', 'petition_signature' );
+  }
+
 }

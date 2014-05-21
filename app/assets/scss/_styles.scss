@@ -31,6 +31,12 @@ input[type="submit"] {
   @extend .no-bullet;
 }
 
+.form-submit {
+  input[type="submit"] {
+    margin-bottom: 0;
+  }
+}
+
 footer {
   @extend .row;
 }
@@ -50,6 +56,13 @@ footer {
   }
   .row-actions {
     @extend .inline-list;
+    float: right;
+    margin: 0;
+  }
+}
+
+#signature-form {
+  .form-submit {
     float: right;
     margin: 0;
   }
