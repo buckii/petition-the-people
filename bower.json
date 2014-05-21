@@ -1,0 +1,6 @@
+{
+  "name": "Petition the People",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation"
+  }
+}

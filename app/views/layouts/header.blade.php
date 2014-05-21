@@ -1,8 +1,12 @@
-<header role="masthead">
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      {{ link_to_action( 'FrontController@index', trans( 'global.app_name' ), null, [ 'id' => 'site-logo', 'rel' => 'home' ] ) }}
+    </li>
+  </ul>
 
-  <nav id="primary-nav" role="navigation">
-    {{ link_to_action( 'FrontController@index', trans( 'global.app_name' ), null, [ 'id' => 'site-logo' ] ) }}
-    <ul>
+  <section class="top-bar-section">
+    <ul class="right">
       @if ( Auth::check() )
 
         <li>{{ link_to_action( 'CampaignController@index', trans( 'campaign.action_index' ) ) }}</li>
@@ -15,5 +19,5 @@
 
       @endif
     </ul>
-  </nav>
-</header>
+  </section>
+</nav>

@@ -15,15 +15,17 @@
         {{ Form::text( 'name' ) }}
       </li>
       <li>
-        {{ Form::label( 'content', trans( 'campaign.field_content' ), [ 'class' => 'required' ] ) }}
-        {{ Form::textarea( 'content' ) }}
-      </li>
-      <li>
-        {{ Form:: label( 'slug', trans( 'campaign.field_slug' ) ) }}
-        {{ Form::text( 'slug' ) }}
-        <p class="instructions">{{ trans( 'campaign.slug_field_description' ) }}</p>
+        {{ Form::label( 'campaign-content', trans( 'campaign.field_content' ), [ 'class' => 'required' ] ) }}
+        {{ Form::textarea( 'content', null, [ 'id' => 'campaign-content' ] ) }}
       </li>
     </ul>
+
+    <fieldset>
+      <legend>{{ Form:: label( 'slug', trans( 'campaign.field_slug' ) ) }}</legend>
+      {{ Form:: label( 'slug', trans( 'campaign.field_slug' ), null, [ 'class' => 'screen-reader-text' ] ) }}
+      {{ Form::text( 'slug' ) }}
+      <p class="instructions">{{ trans( 'campaign.slug_field_description' ) }}</p>
+    </fieldset>
 
     @include( 'petition.search-form' )
 

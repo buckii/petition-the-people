@@ -1,0 +1,32 @@
+/**
+ * Custom application styles
+ */
+
+#content {
+  @extend .row;
+}
+
+.flash {
+  @extend .alert-box;
+  &, ul {
+    @extend .no-bullet;
+  }
+  &.error {
+    @extend .alert;
+  }
+}
+
+input[type="submit"] {
+  @extend .button;
+}
+
+.actions {
+  @extend .inline-list;
+  a {
+    @extend .button, .small;
+  }
+}
+
+.form-list {
+  @extend .no-bullet;
+}

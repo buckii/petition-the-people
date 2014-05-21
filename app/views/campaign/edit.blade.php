@@ -15,8 +15,8 @@
         {{ Form::text( 'name' ) }}
       </li>
       <li>
-        {{ Form::label( 'content', trans( 'campaign.field_content' ), [ 'class' => 'required' ] ) }}
-        {{ Form::textarea( 'content' ) }}
+        {{ Form::label( 'campaign-content', trans( 'campaign.field_content' ), [ 'class' => 'required' ] ) }}
+        {{ Form::textarea( 'content', null, [ 'id' => 'campaign-content' ] ) }}
       </li>
       <li>
         <label for="is_published">{{ Form::checkbox( 'is_published', true, null, [ 'id' => 'is_published' ] ) }} {{ trans( 'campaign.field_is_published' ) }}</label>

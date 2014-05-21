@@ -13,7 +13,12 @@ module.exports = function(grunt) {
 
     concat: {
       dist: {
-        src: ['app/assets/js/application.js'],
+        src: [
+          'bower_components/jquery/dist/jquery.min.js',
+          'bower_components/foundation/js/foundation/foundation.js',
+          'bower_components/foundation/js/foundation/topbar.js',
+          'app/assets/js/application.js'
+        ],
         dest: 'public/js/application.js'
       }
     },

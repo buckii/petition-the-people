@@ -31,3 +31,5 @@ jQuery( function ( $ ) {
   });
 
 });
+
+$(document).foundation();

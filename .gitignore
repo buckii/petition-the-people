@@ -7,3 +7,5 @@ composer.lock
 .DS_Store
 Thumbs.db
 node_modules
+bower_components
+.sass-cache/*
