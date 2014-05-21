@@ -4,7 +4,7 @@
     @foreach ( $campaign->petitions as $petition )
 
       <li>
-        <a href="{{{ $petition->url }}}" class="title" title="{{{ WTPHelper::cleanPetitionBody( $petition->body ) }}}" data-petition-id="{{{ $petition->wtp_id }}}">{{ $petition->title }}</a>
+        <a href="{{{ $petition->url }}}" data-tooltip class="has-tip title" title="{{{ WTPHelper::cleanPetitionBody( $petition->body ) }}}" data-petition-id="{{{ $petition->wtp_id }}}">{{ $petition->title }}</a>
         <input name="petitions[]" type="hidden" value="{{{ $petition->wtp_id }}}" />
       </li>
 

@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         src: [
           'bower_components/jquery/dist/jquery.min.js',
           'bower_components/foundation/js/foundation/foundation.js',
-          'bower_components/foundation/js/foundation/topbar.js',
+          'bower_components/foundation/js/foundation/foundation.tooltip.js',
           'app/assets/js/application.js'
         ],
         dest: 'public/js/application.js'
@@ -26,7 +26,8 @@ module.exports = function(grunt) {
     uglify: {
       min: {
         files: {
-          'public/js/application.js': ['public/js/application.js']
+          'public/js/application.js': ['public/js/application.js'],
+          'public/js/modernizr.min.js': ['bower_components/modernizr/modernizr.js']
         }
       }
     },
@@ -42,10 +43,6 @@ module.exports = function(grunt) {
     watch: {
       options: {
         livereload: true
-      },
-      docs : {
-        files: ['*.md'],
-        tasks: ['markdown']
       },
       scripts: {
         files: ['app/assets/js/*'],
