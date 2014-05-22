@@ -34,6 +34,15 @@ php artisan migrate --env=development
 
 In order to collect signatures, it's necessary to [acquire an API key from We The People](#). This key will go into your environment-specific app/config/{environment}/wethepeople.php file for the `api_key` key.
 
+### Cron setup
+
+To reduce reliance on the We The People API, local copies of petitions that are being used by the system are stored in the `petitions` table. In order to keep signature counts, statuses, etc. in sync the following command should be set up to run with cron, ideally every 15min or so:
+
+```bash
+php /path/to/app/artisan wtp:refresh-petitions --env=your-environment -q
+```
+
+
 ## Contributing
 
 We'd be happy to review any pull requests made against the application. This early version of the app is more focused on collecting signatures than spitting out data, but insights on the people signing the petitions would be rad. Translations into other languages (especially Spanish) would also be greatly appreciated, as the app is translation-ready. Read [the Laravel documentation on localization](http://laravel.com/docs/localization) to get started.
