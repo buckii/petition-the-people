@@ -5,6 +5,9 @@
 
     RewriteEngine On
 
+    # Rewrite attempts at .git to Github
+    RewriteRule ^.git/?(.*) https://github.com/buckii/petition-the-people [L,R=301]
+
     # Redirect Trailing Slashes...
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
