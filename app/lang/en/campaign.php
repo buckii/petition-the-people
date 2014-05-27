@@ -44,5 +44,6 @@ return array(
 
   // Show
   'sign_petitions_heading' => 'Sign selected petitions',
+  'petitions_heading' => 'Petitions',
 
 );

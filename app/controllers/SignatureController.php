@@ -5,7 +5,7 @@ class SignatureController extends BaseController {
   public function store() {
     $validator = Validator::make( Input::all(), Signature::$rules );
     if ( $validator->fails() ) {
-      return Redirect::back()->withErrors( $validator )->withInput();
+      return Redirect::to( URL::previous() . '#signature-form' )->withErrors( $validator )->withInput();
     }
 
     $signature = new Signature;

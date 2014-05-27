@@ -1,3 +1,4 @@
+@import 'compass';
 @import "settings";
 //@import "foundation";
 
@@ -38,4 +39,6 @@
    "foundation/components/type",
 //   "foundation/components/offcanvas",
    "foundation/components/visibility";
+
+@import 'fonts';
 @import 'styles';

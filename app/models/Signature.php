@@ -6,7 +6,7 @@ class Signature extends Eloquent {
     'first_name' => 'required',
     'last_name' => 'required',
     'email' => 'required|email',
-    'postal_code' => 'required',
+    'postal_code' => 'required|regex:/(\d{5}([\-]\d{4})?)/',
     'ip_address' => 'ip',
   );
 

@@ -1,0 +1,11 @@
+/**
+ * Webfonts
+ */
+
+@include font-face('WTP', font-files('wtp/fonts/wtp.woff', 'wtp/fonts/wtp.ttf', 'wtp/fonts/wtp.svg'), 'wtp/fonts/wtp.eot', normal, normal);
+
+$icon-font-family: 'WTP';
+$icon-checkmark: '\2611';
+$icon-cancel: '\00d7';
+$icon-edit: '\e600';
+$icon-view: '\e601';

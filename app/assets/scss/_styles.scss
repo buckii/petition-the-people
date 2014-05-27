@@ -8,6 +8,7 @@
 
 .flash {
   @extend .alert-box;
+  clear: both;
   &, ul {
     @extend .no-bullet;
   }
@@ -37,6 +38,36 @@ input[type="submit"] {
   }
 }
 
+#petition-accordion {
+  margin-bottom: 2 * $paragraph-margin-bottom;
+  > a {
+    @include transition(background, .8s);
+  }
+  dt, dd {
+    @extend .clearfix;
+  }
+  .petition-selected {
+    > a {
+      background: lighten($success-color, 40%);
+      &:before {
+        content: $icon-checkmark;
+        float: right;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-left: 1em;
+        font-family: $icon-font-family;
+        font-size: 1.2em;
+        color: $success-color;
+      }
+    }
+  }
+}
+
+.petition-status {
+  font-style: italic;
+}
+
 footer {
   @extend .row;
 }
@@ -62,8 +93,81 @@ footer {
 }
 
 #signature-form {
+  h2 {
+    margin-bottom: $paragraph-margin-bottom;
+  }
   .form-submit {
     float: right;
     margin: 0;
   }
+  .form-list {
+    li {
+      @extend .medium-6, .columns;
+    }
+  }
+  h2, p {
+    @extend .columns;
+  }
+  .flash {
+    margin-left: .5 * $column-gutter;
+    margin-right: .5 * $column-gutter;
+  }
+  .form-submit {
+    text-align: right;
+  }
+
+  html.js & {
+    display: none;
+    &.has-errors {
+      display: block;
+    }
+  }
+}
+
+.instructions {
+  font-size: .86em;
+}
+
+input.switch {
+  position: relative;
+  width: 2em;
+  height: 1em;
+  overflow: hidden;
+  font-size: 2em;
+  text-indent: 4em;
+  border: 2px solid $panel-border-color;
+  -webkit-appearance: none;
+  &, &:before {
+    border-radius: .5em;
+  }
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    display: block;
+    width: 1em;
+    height: 1em;
+    background: $panel-bg;
+    border: 1px solid $panel-border-color;
+    @include transition(left, .2s);
+  }
+  &:checked {
+    background: $success-color;
+    &:before {
+      left: 1em;
+    }
+  }
+  label & {
+    float: right;
+    margin: 0 0 0 1em;
+  }
+}
+label.has-switch {
+  clear: both;
+  float: left;
+  margin-bottom: $paragraph-margin-bottom;
+  font-size: 1em;
+  line-height: 2em;
+  font-weight: bold;
 }
