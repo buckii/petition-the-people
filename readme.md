@@ -15,7 +15,7 @@ In order to avoid hard-coded environment names, bootstrap/start.php has been con
 
 2. Create a new file at bootstrap/environment.php with the following contents (replacing %environment% with your desired environment name):
     ```
-    <?php return '%environment'; ?>
+    <?php return '%environment%'; ?>
     ```
 
 ### Environment-specific configuration
