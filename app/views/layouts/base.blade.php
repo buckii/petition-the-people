@@ -13,14 +13,16 @@
 <!-- {{ trans( 'global.github_notice' ) }} -->
 </head>
 <body>
-  @include( 'layouts.header' )
+  <div id="wrapper">
+    @include( 'layouts.header' )
 
-  <div id="content" role="main">
-    <div class="columns">
-      @include( 'messages.flash' )
-      @yield( 'body' )
-    </div>
-  </div><!-- #content -->
+    <div id="content" role="main">
+      <div class="columns">
+        @include( 'messages.flash' )
+        @yield( 'body' )
+      </div>
+    </div><!-- #content -->
+  </div><!-- #wrapper -->
 
   @include( 'layouts.footer' )
 

@@ -2,6 +2,23 @@
  * Custom application styles
  */
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  min-height: 100%;
+  overflow: auto;
+  padding-bottom: 3rem;
+}
+
+footer {
+  min-height: 3rem;
+  margin-top: -3rem;
+}
+
 #content {
   @extend .row;
 }
@@ -80,6 +97,15 @@ footer {
   @extend .columns;
   ul {
     @extend .inline-list;
+    margin: 0;
+    padding: .5em 0;
+    border-top: 1px solid $hr-border-color;
+  }
+  a {
+    color: $body-font-color;
+    &:hover, &:focus, &:active {
+      color: $anchor-font-color-hover;
+    }
   }
 }
 
