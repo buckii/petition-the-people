@@ -5,14 +5,14 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Carbon\Carbon;
 
-class ResendPetitions extends Command {
+class ResendSignatures extends Command {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'wtp:resend-petitions';
+	protected $name = 'wtp:resend-signatures';
 
 	/**
 	 * The console command description.

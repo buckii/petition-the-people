@@ -2,6 +2,8 @@
 
 return array(
 
+  'cron_description' => 'Tasks to run as a cron job',
+
   'refresh_petitions_description' => 'Refresh cached petitions from the We The People API',
   'refresh_petitions_heading' => 'Refreshing outdated petitions',
   'petition_updated_line' => 'Petition #:id, ":title", was updated successfully',

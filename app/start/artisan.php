@@ -12,4 +12,5 @@
 */
 
 Artisan::add(new WeThePeople\RefreshPetitions());
-Artisan::add(new WeThePeople\ResendPetitions());
+Artisan::add(new WeThePeople\ResendSignatures());
+Artisan::add(new WeThePeople\Cron());

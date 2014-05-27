@@ -36,12 +36,16 @@ In order to collect signatures, it's necessary to [acquire an API key from We Th
 
 ### Cron setup
 
-To reduce reliance on the We The People API, local copies of petitions that are being used by the system are stored in the `petitions` table. In order to keep signature counts, statuses, etc. in sync the following command should be set up to run with cron, ideally every 15min or so:
+There are a few tasks available through Artisan to perform maintenance on the application:
+
+* `wtp:refresh-petitions` - Update any cached petitions that are more than an hour old
+* `wtp:resend-signatures` - Attempt to re-submit any signatures that received a response other than "200"
+
+These tasks can be called in a batch via the `wtp:cron` task. To keep the data flowing smoothly, it's recommended that you create a system cron job to execute our cron task runner every 5-10min:
 
 ```bash
-php /path/to/app/artisan wtp:refresh-petitions --env=your-environment -q
+php /path/to/app/artisan wtp:cron --env=your-environment -q
 ```
-
 
 ## Contributing
 
