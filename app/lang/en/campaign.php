@@ -32,6 +32,8 @@ return array(
   'index_title' => 'Campaigns',
   'index_heading' => 'Campaigns',
   'index_no_campaigns' => 'You haven\'t created a campaign yet. <a href=":new_campaign">Get started now!</a>',
+  'n_petitions' => 'One petition|:petition_count petitions',
+  'no_petitions' => 'No petitions',
 
   // Create a campaign
   'create_title' => 'Create a Campaign',

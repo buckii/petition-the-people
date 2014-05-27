@@ -17,6 +17,10 @@
   }
 }
 
+textarea {
+  max-width: 100%;
+}
+
 input[type="submit"] {
   @extend .button;
 }
@@ -64,7 +68,7 @@ input[type="submit"] {
   }
 }
 
-.petition-status {
+.empty-data, .petition-status {
   font-style: italic;
 }
 
@@ -82,13 +86,80 @@ footer {
 .campaign-list {
   @extend .no-bullet;
   > li {
-    padding: .5em 0;
+    position: relative;
+    padding: .5em 5em .5em 0;
     border-bottom: 1px solid $hr-border-color;
+    &:hover, &.hover, html.touch & {
+      .row-actions {
+        opacity: 1;
+      }
+    }
   }
   .row-actions {
     @extend .inline-list;
-    float: right;
+    position: absolute;
+    right: 0;
+    top: .6em;
+    opacity: 0;
     margin: 0;
+    font-size: 1.2em;
+    line-height: 1;
+    @include transition(opacity, .1s);
+    a {
+      overflow: hidden;
+      color: $panel-border-color;
+      &, &:before {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
+      &:before {
+        font-family: $icon-font-family;
+      }
+      &:hover, &:focus, &:active {
+        color: $primary-color;
+      }
+    }
+    .edit {
+      &:before {
+        content: $icon-edit;
+      }
+    }
+    .show {
+      &:before {
+        content: $icon-view;
+      }
+    }
+  }
+
+  .petition-toggle, .petition-list {
+    font-size: .75em;
+  }
+  .petition-toggle {
+    margin-bottom: 0;
+    &, a {
+      color: $form-label-font-color;
+    }
+    a {
+      &:before {
+        content: '\25b6';
+        display: inline-block;
+        width: $list-nested-margin;
+        font-size: .75em;
+      }
+      &.open:before {
+        content: '\25bc';
+      }
+      html.no-js &.before {
+        content: '';
+        display: none;
+      }
+    }
+  }
+  .petition-list {
+    html.js & {
+      display: none;
+    }
   }
 }
 

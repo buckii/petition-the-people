@@ -54,6 +54,24 @@ jQuery( function ( $ ) {
     }
   });
 
+  // Toggle petition lists on campaigns/index
+  $('.campaign-list').on( 'click', '.petition-toggle a', function ( e ) {
+    var toggle = $(this),
+    target = $( toggle.attr( 'href' ) );
+    console.log( target );
+
+    e.preventDefault();
+
+    if ( target.is( ':visible' ) ) {
+      target.slideUp(100);
+      toggle.removeClass( 'open' );
+    } else {
+      toggle.addClass( 'open' );
+      target.slideDown( 200 );
+    }
+
+  });
+
 });
 
 $(document).foundation();
