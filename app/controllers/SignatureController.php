@@ -27,6 +27,10 @@ class SignatureController extends BaseController {
       }
 
       // Submit signatures to We The People
+      $api = new WeThePeopleApi;
+      $signature->petitions->each( function ( $petition ) use ( $api, $signature ) {
+        $api->signature( $petition->wtp_id, $signature );
+      });
 
       return Redirect::back()->with( 'success', Lang::choice( 'signature.msg_create_success', count( $petition_ids ), [ 'petition_count' => count( $petition_ids ) ] ) );
 

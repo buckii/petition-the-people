@@ -58,7 +58,7 @@ class PetitionController extends BaseController {
 
     if( $now->diffInHours( $petition->updated_at ) > 1 ) {
       $api = new WeThePeopleApi;
-      $obj = $api->retrieve( $petition->wtp_id );
+      $obj = $api->retrieve( $petition->wtp_id, true );
       $obj = current( $obj->results );
 
       $petition->title = $obj->title;
