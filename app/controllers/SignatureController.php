@@ -28,9 +28,19 @@ class SignatureController extends BaseController {
 
       // Submit signatures to We The People
       $api = new WeThePeopleApi;
-      $signature->petitions->each( function ( $petition ) use ( $api, $signature ) {
-        $api->signature( $petition->wtp_id, $signature );
-      });
+      try {
+        $signature->petitions->each( function ( $petition ) use ( $api, $signature ) {
+          $api->signature( $petition->wtp_id, $signature );
+        });
+      } catch ( GuzzleHttp\Exception\ServerException $e ) {
+        $signature->status = $e->getResponse()->getStatusCode();
+        if ( $e->hasResponse() ) {
+          $signature->status_description = $e->getResponse()->getReasonPhrase();
+        }
+        $signature->save();
+
+        return Redirect::back()->with( 'message', trans( 'signature.msg_will_submit_later' ) );
+      }
 
       return Redirect::back()->with( 'success', Lang::choice( 'signature.msg_create_success', count( $petition_ids ), [ 'petition_count' => count( $petition_ids ) ] ) );
 

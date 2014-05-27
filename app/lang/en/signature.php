@@ -10,6 +10,8 @@ return array(
 
   // Messages
   'msg_create_success' => 'Your signature has been submitted for one petition|Your signature has been submitted for :petition_count petitions',
+  'msg_will_submit_later' => 'There was a problem reaching the We The People servers, but your signature will be submitted automatically as soon as we\'re able!',
+  'msg_create_error' => 'Something went wrong when submitting your signature, please try again!',
 
   // Actions
   'action_submit' => 'Sign',

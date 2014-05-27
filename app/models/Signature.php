@@ -10,12 +10,16 @@ class Signature extends Eloquent {
     'ip_address' => 'ip',
   );
 
-  protected $protected = array( 'id' );
+  protected $protected = array( 'id', 'status', 'status_description' );
 
   protected $table = 'signatures';
 
   public function petitions() {
     return $this->belongsToMany( 'Petition', 'petition_signature' );
+  }
+
+  public function scopeFailed( $query ) {
+    return $query->where( 'status', '!=', 200 );
   }
 
   public function signatures() {

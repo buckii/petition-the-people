@@ -12,3 +12,4 @@
 */
 
 Artisan::add(new WeThePeople\RefreshPetitions());
+Artisan::add(new WeThePeople\ResendPetitions());

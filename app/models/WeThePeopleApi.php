@@ -84,7 +84,7 @@ class WeThePeopleApi {
     try {
       $response = $api->post( $uri, $params );
     } catch ( GuzzleHttp\Exception\ClientException $e ) {
-
+      $response = $e->getResponse();
     }
 
     // Something's not okay
