@@ -54,6 +54,7 @@ class CampaignController extends BaseController {
     $campaign->name = Input::get( 'name' );
     $campaign->content = Input::get( 'content' );
     $campaign->slug = Input::get( 'slug' );
+    $campaign->is_published = Input::get( 'is_published' );
 
     $campaign->save();
 
