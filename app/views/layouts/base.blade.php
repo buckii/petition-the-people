@@ -25,6 +25,7 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', '{{{ Config::get( "wethepeople.google_analytics_profile_id" ) }}}', '{{{ parse_url( Config::get( "app.url", $_SERVER["HTTP_HOST"] ), PHP_URL_HOST ) }}}');
+    ga('require', 'displayfeatures');
     ga('send', 'pageview');
   </script>
 @endif
