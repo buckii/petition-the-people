@@ -1,7 +1,9 @@
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      {{ link_to_action( 'FrontController@index', trans( 'global.app_name' ), null, [ 'id' => 'site-logo', 'rel' => 'home' ] ) }}
+      <a href="{{{ action( 'FrontController@index' ) }}}" id="site-logo" rel="home">
+        <img src="{{{ asset( 'img/logo.svg' ) }}}" alt="{{ trans( 'global.app_name' ) }}" />
+      </a>
     </li>
   </ul>
 

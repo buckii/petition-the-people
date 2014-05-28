@@ -63,6 +63,10 @@ php /path/to/app/artisan wtp:cron --env=your-environment -q
 
 We'd be happy to review any pull requests made against the application. This early version of the app is more focused on collecting signatures than spitting out data, but insights on the people signing the petitions would be rad. Translations into other languages (especially Spanish) would also be greatly appreciated, as the app is translation-ready. Read [the Laravel documentation on localization](http://laravel.com/docs/localization) to get started.
 
+## Special thanks
+
+Special thanks to [Tony Todoroff](http://www.georgetodoroff.com/) for logo design and general support.
+
 ## License
 
 Petition the People petition campaign tool
