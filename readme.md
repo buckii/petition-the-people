@@ -67,7 +67,18 @@ php /path/to/app/artisan wtp:cron --env=your-environment -q
 
 We'd be happy to review any pull requests made against the application. This early version of the app is more focused on collecting signatures than spitting out data, but insights on the people signing the petitions would be rad. Translations into other languages (especially Spanish) would also be greatly appreciated, as the app is translation-ready. Read [the Laravel documentation on localization](http://laravel.com/docs/localization) to get started.
 
-## Special thanks
+### Roadmap
+
+The following are features that would be nice to implement before (or shortly after) the release of the public write API:
+
+* Insights, reports, and other data to help organizations understand their constituents
+* Multiple users per organization
+* Better Google Analytics integration, including the ability to add a profile ID per campaign
+* The ability for organizations to brand (or at least put their logo on) campaigns
+* Integrations with newsletters, CRM tools, etc.
+* Email notifications (petition crosses certain threshold, activity summaries, receipt of signed petitions, etc.)
+
+### Special thanks
 
 Special thanks to [Tony Todoroff](http://www.georgetodoroff.com/) for logo design and general support.
 
