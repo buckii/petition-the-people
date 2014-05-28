@@ -29,3 +29,10 @@ Route::group( [ 'before' => 'auth' ], function () {
   Route::resource( 'signature', 'SignatureController' );
 
 });
+
+// Error pages
+if ( ! Config::get( 'app.debug' ) ) {
+  App::error( function ( $exception, $code ) {
+    return Response::view( 'front.default', array( 'page' => ( Lang::has( 'front.' . $code ) ? $code : 'error' ) ) );
+  });
+}

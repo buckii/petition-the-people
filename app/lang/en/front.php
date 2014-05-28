@@ -27,4 +27,19 @@ return array(
     'content' => '<p>Petition the People was built by <a href="http://www.buckeyeinteractive.com/" rel="external">Buckeye Interactive</a> as part of the National Day of Civic Hacking at The White House May 28, 2014. It\'s available under the <a href="http://www.gnu.org/licenses/gpl-2.0.html" rel="external">GNU General Public License (version 2)</a>, making it free for you to copy, modify, and/or distribute this application. Its source is openly <a href="https://github.com/buckii/petition-the-people" rel="external">available on Github</a>.</p>
       <p>Under the hood, the application is written in PHP atop the <a href="http://laravel.com/" rel="external">Laravel application framework</a>.</p>'
   ),
+
+  // Errors
+  'error' => array(
+    'page_title' => 'An error has occurred!',
+
+    'headline' => 'Uh oh, something went wrong!',
+    'content' => 'An error occurred while processing your request. It may be a momentary hiccup, so please try again in a few minutes.'
+  ),
+
+  '404' => array(
+    'page_title' => 'Page not found',
+
+    'headline' => 'Not found!',
+    'content' => '<p>The page or campaign you were looking for could not be found. It may have been deactivated by the owner or it may never have existed. Please check the URL and try again!</p>'
+  )
 );
