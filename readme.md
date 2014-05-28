@@ -46,6 +46,10 @@ php artisan migrate --env=development
 
 In order to collect signatures, it's necessary to [acquire an API key from We The People](#). This key will go into your environment-specific app/config/{environment}/wethepeople.php file for the `api_key` key.
 
+### Google Analytics
+
+If you'd like to use Google Analytics with your copy of the application, simply put your Universal Analytics profile ID in wethepeople.google_analytics_profile_id and it will automatically be loaded on each page.
+
 ### Cron setup
 
 There are a few tasks available through Artisan to perform maintenance on the application:

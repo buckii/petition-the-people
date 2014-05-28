@@ -8,4 +8,7 @@ return array(
   // Cache API requests?
   'cache_api_requests' => true,
 
+  // Google (Universal) Analytics property id
+  'google_analytics_profile_id' => '',
+
 );
