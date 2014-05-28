@@ -2,10 +2,6 @@
 
 class UserController extends BaseController {
 
-  public function dashboard() {
-    return View::make( 'user.dashboard' );
-  }
-
   public function create() {
     return View::make( Config::get( 'confide::signup_form' ) );
   }
@@ -41,7 +37,7 @@ class UserController extends BaseController {
 
   public function login() {
     if ( Confide::user() ) {
-      return Redirect::action( 'UserController@dashboard' );
+      return Redirect::action( 'CampaignController@index' );
     } else {
       return View::make( Config::get( 'confide::login_form' ) );
     }

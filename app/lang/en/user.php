@@ -49,8 +49,4 @@ return array(
   'reset_password_heading' => 'Reset your password',
   'reset_password_body' => 'Enter a new password for your account in order to reset your password.',
 
-  // Dashboard
-  'dashboard_title' => 'Dashboard',
-  'dashboard_heading' => 'My Dashboard',
-
 );
