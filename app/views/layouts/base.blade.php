@@ -34,10 +34,8 @@
     @include( 'layouts.header' )
 
     <div id="content" role="main">
-      <div class="columns">
-        @include( 'messages.flash' )
-        @yield( 'body' )
-      </div>
+      @include( 'messages.flash' )
+      @yield( 'body' )
     </div><!-- #content -->
   </div><!-- #wrapper -->
 

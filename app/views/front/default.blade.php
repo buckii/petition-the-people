@@ -4,7 +4,12 @@
 
 @section( 'body' )
 
-  <h1>{{ trans( "front.$page.headline" ) }}</h1>
-  {{ trans( "front.$page.content", ( isset( $body_vars ) ? $body_vars : [] ) ) }}
+  <section class="page-header">
+    <h1>{{ trans( "front.$page.headline" ) }}</h1>
+  </section>
+
+  <div class="primary">
+    {{ trans( "front.$page.content", ( isset( $body_vars ) ? $body_vars : [] ) ) }}
+  </div>
 
 @stop

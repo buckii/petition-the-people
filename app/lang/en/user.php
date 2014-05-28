@@ -30,6 +30,8 @@ return array(
   // Sign-up page
   'create_title' => 'Sign Up',
   'create_heading' => 'Sign up',
+  'create_body' => '<p>By signing up for an account, you\'ll be able to create and share campaigns for the issues that matter most to you. <strong>Signing up is free</strong>, and we\'ll never share your information with anyone.</p>
+  <p>Be forewarned, <strong>your username will be public</strong> as it will be used in your campaign URLs.</p>',
 
   // Login
   'login_title' => 'Log In',

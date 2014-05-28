@@ -7,7 +7,9 @@
 
 @section( 'body' )
 
-  <h1>{{ trans( 'front.index.headline' ) }}</h1>
-  {{ trans( 'front.index.content', [ 'create_link' => action( 'UserController@create' ) ] ) }}
+  <div class="main">
+    <h1>{{ trans( 'front.index.headline' ) }}</h1>
+    {{ trans( 'front.index.content', [ 'create_link' => action( 'UserController@create' ) ] ) }}
+  </div>
 
 @stop

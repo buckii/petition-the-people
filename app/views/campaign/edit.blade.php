@@ -4,31 +4,37 @@
 
 @section( 'body' )
 
-  {{ Form::model( $campaign, [ 'action' => [ 'CampaignController@update', $campaign->id ], 'method' => 'put' ] ) }}
-
+  <section class="page-header">
     <h1>{{ trans( 'campaign.edit_heading' ) }}</h1>
-    @include( 'messages.errors' )
+  </section>
 
-    <ul class="form-list">
-      <li>
-        {{ Form::label( 'name', trans( 'campaign.field_name' ), [ 'class' => 'required' ] ) }}
-        {{ Form::text( 'name' ) }}
-      </li>
-      <li>
-        {{ Form::label( 'campaign-content', trans( 'campaign.field_content' ), [ 'class' => 'required' ] ) }}
-        {{ Form::textarea( 'content', null, [ 'id' => 'campaign-content' ] ) }}
-      </li>
-      <li>
-        <label for="is_published">{{ Form::checkbox( 'is_published', true, null, [ 'id' => 'is_published' ] ) }} {{ trans( 'campaign.field_is_published' ) }}</label>
-      </li>
-    </ul>
+  <div class="main">
+    {{ Form::model( $campaign, [ 'action' => [ 'CampaignController@update', $campaign->id ], 'method' => 'put' ] ) }}
 
-    @include( 'petition.search-form' )
 
-    <p class="form-submit">
-      {{ Form::submit( trans( 'campaign.action_edit_submit' ) ) }}
-    </p>
+      @include( 'messages.errors' )
 
-  {{ Form::close() }}
+      <ul class="form-list">
+        <li>
+          {{ Form::label( 'name', trans( 'campaign.field_name' ), [ 'class' => 'required' ] ) }}
+          {{ Form::text( 'name' ) }}
+        </li>
+        <li>
+          {{ Form::label( 'campaign-content', trans( 'campaign.field_content' ), [ 'class' => 'required' ] ) }}
+          {{ Form::textarea( 'content', null, [ 'id' => 'campaign-content' ] ) }}
+        </li>
+        <li>
+          <label for="is_published">{{ Form::checkbox( 'is_published', true, null, [ 'id' => 'is_published' ] ) }} {{ trans( 'campaign.field_is_published' ) }}</label>
+        </li>
+      </ul>
+
+      @include( 'petition.search-form' )
+
+      <p class="form-submit">
+        {{ Form::submit( trans( 'campaign.action_edit_submit' ) ) }}
+      </p>
+
+    {{ Form::close() }}
+  </div>
 
 @stop

@@ -11,7 +11,7 @@ html, body {
 #wrapper {
   min-height: 100%;
   overflow: auto;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 
 #site-logo {
@@ -20,6 +20,18 @@ html, body {
     max-height: 100%;
     padding: .25em 1em;
   }
+}
+
+.page-header, .main {
+  @extend .columns;
+}
+
+.primary {
+  @extend .large-8, .columns;
+}
+
+.secondary {
+  @extend .large-4, .columns;
 }
 
 footer {
@@ -42,6 +54,10 @@ footer {
   }
 }
 
+h1 {
+  @extend .columns;
+}
+
 textarea {
   max-width: 100%;
 }
@@ -62,6 +78,7 @@ input[type="submit"] {
 }
 
 .form-submit {
+  text-align: right;
   input[type="submit"] {
     margin-bottom: 0;
   }
