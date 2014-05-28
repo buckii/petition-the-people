@@ -10,6 +10,8 @@
 <link href="{{{ asset( 'css/app.css' ) }}}" type="text/css" rel="stylesheet" media="all" />
 <script src="{{{ asset( 'js/modernizr.min.js' ) }}}"></script>
 <link href="{{{ asset( 'favicon.ico' ) }}}" rel="shortcut icon" />
+<meta name="apple-mobile-web-app-title" content="{{{ trans( 'global.ios_app_title' ) }}}" />
+<link href="{{{ asset( 'img/apple-touch-icon.png' ) }}}" rel="apple-touch-icon" />
 <!-- {{ trans( 'global.github_notice' ) }} -->
 </head>
 <body>
