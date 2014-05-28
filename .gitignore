@@ -9,3 +9,7 @@ Thumbs.db
 node_modules
 bower_components
 .sass-cache/*
+app/config/local/*
+app/config/development/*
+app/config/staging/*
+app/config/production/*
