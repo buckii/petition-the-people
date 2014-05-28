@@ -22,6 +22,18 @@ In order to avoid hard-coded environment names, bootstrap/start.php has been con
 
 Default settings are within the main app config files, but you'll need to take care of a few yourself (namely the database and mail settings). You can [read up on environment-specific overrides to config files](http://laravel.com/docs/configuration) on the Laravel site.
 
+**A few config options you'll want to make sure you change before deploying:**
+
+* app.debug
+* app.url
+* app.key
+* database.default
+* database.connections
+* mail.from
+* wethepeople.api_key
+
+Additionally, if you're using an environment name besides "development", "staging", or "production" you'll want to make sure your config information isn't being committed to the repository!
+
 ### Database migrations
 
 Once you've created a database for the application and provided Laravel with the credentials, you'll need to run the following (updating the `--env` flag as appropriate) to get the database structure in place:
