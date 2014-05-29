@@ -5,8 +5,33 @@
 /*jslint white: true */
 /*jshint browser: true, jquery: true */
 
+/**
+ * Toggle classes for the slug check
+ *
+ * @param obj response Response from the Ajax request
+ */
+function slugCheckToggle( response ) {
+  "use strict";
+
+  var slug = jQuery( '#slug' ),
+  msg = jQuery( '#slug-availability' );
+
+  if ( response.available ) {
+    if ( ! slug.hasClass( 'available' ) ) {
+      slug.removeClass( 'unavailable loading' ).addClass( 'available' );
+      msg.html( response.message );
+    }
+
+  } else {
+    slug.removeClass( 'available loading' ).addClass( 'unavailable' );
+    msg.html( response.message );
+  }
+}
+
 jQuery( function ( $ ) {
   "use strict";
+
+  var slugCheckCache = {};
 
   $('#petition-search').on( 'keyup', '#search', function () {
     var input = $(this),
@@ -76,7 +101,25 @@ jQuery( function ( $ ) {
     if ( ! confirm( app.i18n.confirmCampaignDelete ) ) {
       e.preventDefault();
     }
-  })
+  });
+
+  // Check slug availability
+  $('#slug').after( '<p id="slug-availability" />' );
+  $('#slug').on( 'keyup', function () {
+    var input = $(this),
+    val = input.val();
+
+    input.addClass( 'loading' );
+    if ( slugCheckCache.hasOwnProperty( val ) ) {
+      slugCheckToggle( slugCheckCache[ val ] );
+
+    } else {
+      $.get( app.paths.slugCheck, { slug: val }, function ( response ) {
+        slugCheckCache[ val ] = response;
+        slugCheckToggle( response );
+      });
+    }
+  });
 
 });
 

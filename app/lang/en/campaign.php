@@ -29,6 +29,9 @@ return array(
   'publish_to_share_tooltip' => 'Campaigns must be publicly available before they can be shared',
   'msg_show_not_published' => 'This is just a preview; campaigns cannot accept signatures until they\'re published!',
   'msg_confirm_delete' => 'Are you sure you want to delete this campaign? This action cannot be undone!',
+  'msg_slug_not_set' => 'A slug is required',
+  'msg_slug_taken' => 'Slug has already been taken',
+  'msg_slug_available' => 'Slug is available!',
 
   // Index
   'index_title' => 'Campaigns',

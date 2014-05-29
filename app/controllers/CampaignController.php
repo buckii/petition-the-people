@@ -148,4 +148,33 @@ class CampaignController extends BaseController {
     }
   }
 
+  public function slugUniquenessCheck() {
+    if ( ! Input::has( 'slug' ) ) {
+      $response = array(
+        'available' => false,
+        'message' => trans( 'campaign.msg_slug_not_set' )
+      );
+
+    } else {
+      $campaign = Campaign::where( 'user_id', '=', Auth::user()->id )
+        ->where( 'slug', '=', Input::get( 'slug' ) )
+        ->count();
+
+      if ( $campaign ) {
+        $response = array(
+          'available' => false,
+          'message' => trans( 'campaign.msg_slug_taken' )
+        );
+
+      } else {
+        $response = array(
+          'available' => true,
+          'message' => trans( 'campaign.msg_slug_available' )
+        );
+      }
+    }
+
+    return $response;
+  }
+
 }

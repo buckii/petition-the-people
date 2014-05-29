@@ -25,6 +25,8 @@ Route::get( 'campaigns/{username}/{slug}', 'CampaignController@showPublic' );
 // Actions reserved for logged-in users
 Route::group( [ 'before' => 'auth' ], function () {
 
+  Route::get( 'campaign/slug-check', 'CampaignController@slugUniquenessCheck' );
+
   Route::resource( 'campaign', 'CampaignController' );
   Route::resource( 'signature', 'SignatureController' );
 

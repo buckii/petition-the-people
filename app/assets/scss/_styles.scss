@@ -80,6 +80,30 @@ label {
   }
 }
 
+#slug {
+  &.loading {
+    background-image: inline-image('ajax-loader.gif');
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+  &.available {
+    background: lighten($success-color, 40%);
+    + #slug-availability {
+      color: $success-color;
+    }
+  }
+  &.unavailable {
+    background: lighten($alert-color, 40%);
+    + #slug-availability {
+      color: $alert-color;
+    }
+  }
+}
+
+#slug-availability {
+  @extend .instructions;
+}
+
 input[type="submit"] {
   @extend .button;
 }

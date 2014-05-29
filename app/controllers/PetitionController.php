@@ -10,6 +10,10 @@ class PetitionController extends BaseController {
 
     if ( Request::ajax() ) {
       return View::make( 'petition.search-list' )->with( 'petitions', $petitions->results );
+
+    // If it's not Ajax, just return the JSON
+    } else {
+      return $petitions->results;
     }
   }
 

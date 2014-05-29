@@ -32,7 +32,7 @@
             {{ trans( 'campaign.field_slug' ) }}
             <span class="tooltip-indicator has-tooltip" title="{{{ trans( 'campaign.slug_field_toolip', [ 'base_path' => action( 'CampaignController@showPublic', [ 'user' => Auth::user()->username, 'slug' => trans( 'campaign.slug_placeholder' ) ] ) ] ) }}}" data-tooltip>?</span>
           </label>
-          {{ Form::text( 'slug' ) }}
+          {{ Form::text( 'slug', null, [ 'id' => 'slug' ] ) }}
           <p class="instructions">{{ trans( 'campaign.slug_field_description' ) }}</p>
         </li>
         <li>

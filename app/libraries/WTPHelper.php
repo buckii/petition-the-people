@@ -129,7 +129,8 @@ class WTPHelper {
   public static function getScriptLocalizationObject() {
     $obj = array(
       'paths' => array(
-        'search' => action( 'PetitionController@search' )
+        'search' => action( 'PetitionController@search' ),
+        'slugCheck' => action( 'CampaignController@slugUniquenessCheck' )
       ),
       'i18n' => array(
         'confirmCampaignDelete' => trans( 'campaign.msg_confirm_delete' ),

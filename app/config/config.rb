@@ -6,7 +6,7 @@ add_import_path "bower_components/foundation/scss"
 http_path = '/'
 css_dir = 'public/css'
 sass_dir = 'app/assets/scss'
-images_dir = 'img'
+images_dir = 'public/img'
 #generated_images_dir = 'img/generated'
 javascripts_dir = 'js'
 fonts_dir = 'fonts'
