@@ -9,6 +9,7 @@ class PetitionController extends BaseController {
     $petitions = $api->search( Input::get( 'term' ) );
 
     if ( Request::ajax() ) {
+      dd( $petitions );
       return View::make( 'petition.search-list' )->with( 'petitions', $petitions->results );
     }
   }

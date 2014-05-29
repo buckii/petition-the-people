@@ -6,7 +6,7 @@ return array(
   'field_name' => 'Campaign Title',
   'field_content' => 'Description',
   'field_slug' => 'URL slug',
-  'field_is_published' => 'Make this campaign publicly available?',
+  'field_is_published' => 'Make this campaign public?',
 
   // Actions
   'action_index' => 'Campaigns',
@@ -45,6 +45,7 @@ return array(
   // Edit a campaign
   'edit_title' => 'Edit Campaign',
   'edit_heading' => 'Edit campaign',
+  'edit_campaign_url' => 'Your campaign\'s URL:',
 
   // Show
   'sign_petitions_heading' => 'Sign selected petitions',

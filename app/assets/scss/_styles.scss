@@ -62,8 +62,22 @@ textarea {
   max-width: 100%;
 }
 
+label {
+  input[type="checkbox"] {
+    margin: 0 .5em 0 0;
+  }
+}
+
 input[type="submit"] {
   @extend .button;
+}
+
+.campaign-link {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: $primary-color;
 }
 
 .delete {

@@ -32,6 +32,10 @@ class Campaign extends Eloquent {
     return (bool) ( $this->user_id == $user_id );
   }
 
+  public function getUrlAttribute() {
+    return action( 'CampaignController@showPublic', [ 'user' => $this->user->username, 'slug' => $this->slug ] );
+  }
+
   public function petitions() {
     return $this->belongsToMany( 'Petition' );
   }

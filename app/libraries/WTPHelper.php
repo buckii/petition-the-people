@@ -111,6 +111,17 @@ class WTPHelper {
   }
 
   /**
+   * Strip the protocol from a URL
+   *
+   * @param str $url A URL
+   * @return str
+   */
+  public static function stripProtocol( $url ) {
+    $pattern = sprintf( '/%s:\/\//', parse_url( $url, PHP_URL_SCHEME ) );
+    return preg_replace( $pattern, '', $url );
+  }
+
+  /**
    * Build our global WeThePeople JavaScript object, used to localize our scripts
    *
    * @return str

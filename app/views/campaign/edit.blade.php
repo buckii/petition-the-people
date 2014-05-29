@@ -28,6 +28,12 @@
     <div class="secondary">
       <ul class="form-list panel">
         <li>
+          <p>
+            {{ trans( 'campaign.edit_campaign_url' ) }}
+            <a href="{{{ $campaign->url }}}" class="has-tip campaign-link" title="{{{ $campaign->url }}}" data-tooltip>{{ WTPHelper::stripProtocol( $campaign->url ) }}</a>
+          </p>
+        </li>
+        <li>
           <label for="is_published">{{ Form::checkbox( 'is_published', true, null, [ 'id' => 'is_published' ] ) }} {{ trans( 'campaign.field_is_published' ) }}</label>
         </li>
         <li><button name="delete-campaign" id="delete-campaign" class="delete" type="submit" value="1">{{ trans( 'campaign.action_delete' ) }}</button></li>
