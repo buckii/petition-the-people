@@ -26,6 +26,18 @@ html, body {
   @extend .columns;
 }
 
+.page-header {
+  &.has-actions {
+    h1 {
+      float: left;
+      width: auto;
+    }
+    .actions {
+      float: right;
+    }
+  }
+}
+
 .primary {
   @extend .large-8, .columns;
 }

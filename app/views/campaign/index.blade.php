@@ -4,7 +4,7 @@
 
 @section( 'body' )
 
-  <section class="page-header">
+  <section class="page-header has-actions">
     <h1>{{ trans( 'campaign.index_heading' ) }}</h1>
 
     <ul class="actions">
