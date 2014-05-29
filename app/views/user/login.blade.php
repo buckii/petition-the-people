@@ -21,7 +21,7 @@
         <li>
           {{ Form:: label( 'password', trans( 'user.field_password' ), [ 'class' => 'required' ] ) }}
           {{ Form::password( 'password' ) }}
-          {{ link_to_action( 'UserController@forgotPassword', trans( 'user.action_forgot_password' ), null, [ 'class' => 'forgot-password' ] ) }}
+          <p>{{ link_to_action( 'UserController@forgotPassword', trans( 'user.action_forgot_password' ), null, [ 'class' => 'forgot-password' ] ) }}</p>
         </li>
         <li>
           <label for="remember">{{ Form::checkbox( 'remember' ) }} {{ trans( 'user.login_remember_me' ) }}</label>

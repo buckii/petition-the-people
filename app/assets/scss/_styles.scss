@@ -147,6 +147,10 @@ input[type="submit"] {
   }
 }
 
+.forgot-password {
+  @extend .instructions;
+}
+
 #petition-accordion {
   margin-bottom: 2 * $paragraph-margin-bottom;
   > a {

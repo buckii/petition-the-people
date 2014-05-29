@@ -37,7 +37,7 @@ return array(
   'login_title' => 'Log In',
   'login_heading' => 'Log in',
   'login_remember_me' => 'Remember me',
-  'login_create_account' => 'Don\'t have an account? <a href=":registration_url">Sign up for free</a>!',
+  'login_create_account' => 'Don\'t have your Petition The People account yet? <a href=":registration_url">Sign up for free</a> and start creating campaigns and collecting signatures!',
 
   // Forgot password
   'forgot_password_title' => 'Forgot Password?',
