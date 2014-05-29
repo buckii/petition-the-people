@@ -41,6 +41,8 @@ return array(
   'create_title' => 'Create a Campaign',
   'create_heading' => 'New campaign',
   'slug_field_description' => 'Once set, this unique URL cannot be changed!',
+  'slug_placeholder' => 'your-slug',
+  'slug_field_toolip' => 'This will be a unique identifier for your campaign; public URLs will look like <code>:base_path</code>',
 
   // Edit a campaign
   'edit_title' => 'Edit Campaign',

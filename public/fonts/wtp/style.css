@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'wtp';
-	src:url('fonts/wtp.eot?-ujln8k');
-	src:url('fonts/wtp.eot?#iefix-ujln8k') format('embedded-opentype'),
-		url('fonts/wtp.woff?-ujln8k') format('woff'),
-		url('fonts/wtp.ttf?-ujln8k') format('truetype'),
-		url('fonts/wtp.svg?-ujln8k#wtp') format('svg');
+	src:url('fonts/wtp.eot?-cw6a42');
+	src:url('fonts/wtp.eot?#iefix-cw6a42') format('embedded-opentype'),
+		url('fonts/wtp.woff?-cw6a42') format('woff'),
+		url('fonts/wtp.ttf?-cw6a42') format('truetype'),
+		url('fonts/wtp.svg?-cw6a42#wtp') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -28,6 +28,9 @@
 }
 .wtp-eye:before {
 	content: "\e601";
+}
+.wtp-info:before {
+	content: "\3f";
 }
 .wtp-cancel-circle:before {
 	content: "\d7";

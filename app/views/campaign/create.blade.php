@@ -28,7 +28,10 @@
     <div class="secondary">
       <ul class="form-list panel">
         <li>
-          {{ Form:: label( 'slug', trans( 'campaign.field_slug' ), null, [ 'class' => 'screen-reader-text' ] ) }}
+          <label for="slug">
+            {{ trans( 'campaign.field_slug' ) }}
+            <span class="tooltip-indicator has-tooltip" title="{{{ trans( 'campaign.slug_field_toolip', [ 'base_path' => action( 'CampaignController@showPublic', [ 'user' => Auth::user()->username, 'slug' => trans( 'campaign.slug_placeholder' ) ] ) ] ) }}}" data-tooltip>?</span>
+          </label>
           {{ Form::text( 'slug' ) }}
           <p class="instructions">{{ trans( 'campaign.slug_field_description' ) }}</p>
         </li>

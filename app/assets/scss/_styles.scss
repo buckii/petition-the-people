@@ -153,6 +153,13 @@ input[type="submit"] {
   font-style: italic;
 }
 
+.tooltip-indicator {
+  display: inline-block;
+  margin-left: .5em;
+  font-family: $icon-font-family;
+  color: $primary-color;
+}
+
 footer {
   @extend .row;
 }
