@@ -21,10 +21,10 @@ return array(
   ),
 
   'about' => array(
-    'page_title' => 'About Petition the People',
+    'page_title' => 'About Petition The People',
 
     'headline' => 'About',
-    'content' => '<p>Petition the People was built by <a href="http://www.buckeyeinteractive.com/" rel="external">Buckeye Interactive</a> as part of the National Day of Civic Hacking at The White House May 28, 2014. It\'s available under the <a href="http://www.gnu.org/licenses/gpl-2.0.html" rel="external">GNU General Public License (version 2)</a>, making it free for you to copy, modify, and/or distribute this application. Its source is openly <a href="https://github.com/buckii/petition-the-people" rel="external">available on GitHub</a>.</p>
+    'content' => '<p>Petition The People was built by <a href="http://www.buckeyeinteractive.com/" rel="external">Buckeye Interactive</a> as part of the National Day of Civic Hacking at The White House May 28, 2014. It\'s available under the <a href="http://www.gnu.org/licenses/gpl-2.0.html" rel="external">GNU General Public License (version 2)</a>, making it free for you to copy, modify, and/or distribute this application. Its source is openly <a href="https://github.com/buckii/petition-the-people" rel="external">available on GitHub</a>.</p>
       <p>Under the hood, the application is written in PHP atop the <a href="http://laravel.com/" rel="external">Laravel application framework</a>.</p>'
   ),
 
