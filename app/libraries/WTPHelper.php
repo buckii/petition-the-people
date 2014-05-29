@@ -119,6 +119,9 @@ class WTPHelper {
     $obj = array(
       'paths' => array(
         'search' => action( 'PetitionController@search' )
+      ),
+      'i18n' => array(
+        'confirmCampaignDelete' => trans( 'campaign.msg_confirm_delete' ),
       )
     );
     return json_encode( $obj );

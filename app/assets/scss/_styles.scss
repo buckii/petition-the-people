@@ -66,6 +66,15 @@ input[type="submit"] {
   @extend .button;
 }
 
+.delete {
+  @extend .instructions;
+  padding: 0;
+  &, &:hover, &:focus, &:active {
+    color: $alert-color;
+    background: transparent;
+  }
+}
+
 .actions {
   @extend .inline-list;
   a {
@@ -75,6 +84,10 @@ input[type="submit"] {
 
 .form-list {
   @extend .no-bullet;
+  .delete {
+    display: block;
+    margin: 2em 0 0;
+  }
 }
 
 .form-submit {

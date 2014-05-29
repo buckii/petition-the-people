@@ -91,6 +91,9 @@ class CampaignController extends BaseController {
 
     if ( ! $campaign || ! $campaign->belongsToUser() ) {
       return Redirect::action( 'CampaignController@index' )->withErrors( trans( 'campaign.msg_not_allowed_to_edit_campaign' ) );
+
+    } elseif ( Input::has( 'delete-campaign' ) ) {
+      return $this->destroy( $id );
     }
 
     $input = Input::all();
@@ -125,7 +128,7 @@ class CampaignController extends BaseController {
 
   public function destroy( $id ) {
     $campaign = Campaign::find( $id );
-    if ( ! $campaign || ! $campaign->belongsToUser() || $campaign->delete() ) {
+    if ( ! $campaign || ! $campaign->belongsToUser() || ! $campaign->delete() ) {
       return Redirect::action( 'CampaignController@edit', [ 'id' => $campaign->id ] )->withErrors( 'campaign.msg_not_allowed_to_edit_campaign' );
 
     } else {

@@ -30,6 +30,7 @@
         <li>
           <label for="is_published">{{ Form::checkbox( 'is_published', true, null, [ 'id' => 'is_published' ] ) }} {{ trans( 'campaign.field_is_published' ) }}</label>
         </li>
+        <li><button name="delete-campaign" id="delete-campaign" class="delete" type="submit" value="1">{{ trans( 'campaign.action_delete' ) }}</button></li>
       </ul>
     </div>
 

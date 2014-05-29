@@ -17,6 +17,7 @@ return array(
   'action_edit_submit' => 'Save changes',
   'action_show' => 'View',
   'action_show_title' => 'View this campaign',
+  'action_delete' => 'Delete this campaign',
 
   // Messages
   'msg_create_success' => 'Your campaign; ":name", was create successfully',
@@ -27,6 +28,7 @@ return array(
   'msg_not_allowed_to_edit_campaign' => 'You do not have permission to edit this campaign',
   'publish_to_share_tooltip' => 'Campaigns must be publicly available before they can be shared',
   'msg_show_not_published' => 'This is just a preview; campaigns cannot accept signatures until they\'re published!',
+  'msg_confirm_delete' => 'Are you sure you want to delete this campaign? This action cannot be undone!',
 
   // Index
   'index_title' => 'Campaigns',

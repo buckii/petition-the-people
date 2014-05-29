@@ -72,6 +72,13 @@ jQuery( function ( $ ) {
 
   });
 
+  // Delete a campaign
+  $('#delete-campaign').on( 'click', function ( e ) {
+    if ( ! confirm( app.i18n.confirmCampaignDelete ) ) {
+      e.preventDefault();
+    }
+  })
+
 });
 
 $(document).foundation();
