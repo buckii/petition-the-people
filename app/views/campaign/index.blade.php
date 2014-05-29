@@ -33,7 +33,12 @@
               <ul id="petitions-{{ $campaign->id }}" class="petition-list">
                 @foreach ( $campaign->petitions as $petition )
 
-                  <li><a href="{{{ $petition->url }}}" data-tooltip class="has-tip title" title="{{{ WTPHelper::cleanPetitionBody( $petition->body ) }}}" data-petition-id="{{{ $petition->wtp_id }}}">{{ $petition->title }}</a></li>
+                  <li>
+                    <a href="{{{ $petition->url }}}" data-tooltip class="has-tip title" title="{{{ WTPHelper::cleanPetitionBody( $petition->body ) }}}" data-petition-id="{{{ $petition->wtp_id }}}">{{ $petition->title }}</a>
+                    @unless ( $petition->status == 'open' )
+                      <span class="petition-status status-{{{ $petition->status }}}">{{ trans( 'petition.status_container', [ 'status' => $petition->status_label ] ) }}</span>
+                    @endunless
+                  </li>
 
                 @endforeach
               </ul>
