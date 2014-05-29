@@ -27,8 +27,7 @@ module.exports = function(grunt) {
     uglify: {
       min: {
         files: {
-          'public/js/application.js': ['public/js/application.js'],
-          'public/js/modernizr.min.js': ['bower_components/modernizr/modernizr.js']
+          'public/js/application.js': ['public/js/application.js']
         }
       }
     },
