@@ -26,9 +26,15 @@ class CampaignController extends BaseController {
     return App::abort( 404 );
   }
 
-  public function showPublic( $user, $slug ) {
-    $campaign = Campaign::where( 'slug', '=', $slug )->firstOrFail();
-    if ( $campaign && $campaign->is_published && $campaign->user->username == $user ) {
+  public function showPublic( $username, $slug ) {
+    // This *should* be a join, but it doesn't seem to load petitions when we go that way
+    $user_id = User::where( 'username', '=', $username )->pluck( 'id' );
+    $campaign = Campaign::where( 'slug', '=', $slug )
+      ->where( 'user_id', '=', $user_id )
+      ->with( 'petitions' )
+      ->firstOrFail();
+
+    if ( $campaign && $campaign->is_published ) {
       $vars = array(
         'campaign' => $campaign,
         'petitions' => $campaign->petitions()->open()->get()
@@ -44,7 +50,13 @@ class CampaignController extends BaseController {
   }
 
   public function store() {
-    $validator = Validator::make( Input::all(), Campaign::$rules );
+    // Fill in the user ID for the slug validation
+    $rules = Campaign::$rules;
+    foreach ( $rules['slug'] as $k => $rule ) {
+      $rules['slug'][ $k ] = str_replace( ':user_id', Auth::user()->id, $rule );
+    }
+
+    $validator = Validator::make( Input::all(), $rules );
     if ( $validator->fails() ) {
       return Redirect::back()->withErrors( $validator )->withInput();
     }

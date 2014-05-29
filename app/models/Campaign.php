@@ -5,7 +5,11 @@ class Campaign extends Eloquent {
   public static $rules = array(
     'name' => 'required',
     'content' => 'required',
-    'slug' => array( 'required_without:id', 'regex:/^[a-z0-9-]+$/', 'unique:campaigns,slug' )
+    'slug' => array(
+      'required_without:id',
+      'regex:/^[a-z0-9-]+$/',
+      'unique:campaigns,slug,null,id,user_id,:user_id'
+    )
   );
 
   protected $fillable = array( 'name', 'content', 'is_published' );
@@ -30,6 +34,10 @@ class Campaign extends Eloquent {
 
   public function petitions() {
     return $this->belongsToMany( 'Petition' );
+  }
+
+  public function setIsPublishedAttribute( $val ) {
+    $this->attributes['is_published'] = (boolean) $val;
   }
 
   public function user() {

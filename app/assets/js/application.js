@@ -58,7 +58,6 @@ jQuery( function ( $ ) {
   $('.campaign-list').on( 'click', '.petition-toggle a', function ( e ) {
     var toggle = $(this),
     target = $( toggle.attr( 'href' ) );
-    console.log( target );
 
     e.preventDefault();
 
