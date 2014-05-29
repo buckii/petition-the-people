@@ -1,4 +1,4 @@
-# Petition the People
+# ![](app/assets/img/readme-banner.png) Petition the People
 
 ## Installation
 
