@@ -367,3 +367,10 @@ label.has-switch {
   line-height: 2em;
   font-weight: bold;
 }
+
+.global-notice {
+  margin: 0;
+  padding: .5em;
+  text-align: center;
+  background: $info-color;
+}

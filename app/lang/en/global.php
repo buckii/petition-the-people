@@ -9,4 +9,7 @@ return array(
 
   // Formats
   'date_format' => 'M j, Y',
+
+  // Site notices
+  'demo_mode_enabled' => '<strong>Heads up!</strong> The We The People Write API that\'s used by this site is currently in beta. Signatures collected before the API is public will not actually be counted in official petitions!',
 );

@@ -30,6 +30,10 @@
   </script>
 @endif
 
+@if ( Config::get( 'wethepeople.demo_mode_enabled' ) )
+  <p class="global-notice">{{ trans( 'global.demo_mode_enabled' ) }}</p>
+@endif
+
   <div id="wrapper">
     @include( 'layouts.header' )
 
